@@ -23,6 +23,32 @@ export class SectionEvidenceComponent implements OnInit,AfterViewInit,OnChanges 
     private documentService:DocumentService,
     private evidenceService:EvidenceService
   ) { }
+
+  extractFileNameFromLink(link: string): string {
+    try {
+      const url = new URL(link);
+      const srcParam = url.searchParams.get('src');
+      if (srcParam) {
+        const decodedSrc = decodeURIComponent(srcParam);
+        const fileNameFromSrc = this.extractFileNameFromLink(decodedSrc); 
+        if (fileNameFromSrc) return fileNameFromSrc;
+      }
+
+      const path = decodeURIComponent(url.pathname);
+      const segments = path.split('/').filter(Boolean);
+      if (segments.length === 0) return 'documento';
+
+      const lastSegment = segments[segments.length - 1];
+
+      const extensionMatch = lastSegment.match(/\.(pdf|docx?|xlsx?|pptx?|jpg|jpeg|png)$/i);
+      if (extensionMatch) return lastSegment;
+
+      return lastSegment.replace(/[-_]/g, ' ').replace(/\.\w+$/, '');
+    } catch (e) {
+      return 'documento';
+    }
+  }
+
   adjustSizeText(){
     this.titleDivList.map((divElement:ElementRef)=>{
       const containerWidth = divElement.nativeElement.clientWidth;
@@ -34,11 +60,30 @@ export class SectionEvidenceComponent implements OnInit,AfterViewInit,OnChanges 
     })
   }
 
-  ngOnChanges(changes:SimpleChanges){
-    if(this.characteristicWithEvidences){
-      this.title = this.characteristicWithEvidences.characteristic.name
-      this.evidences = this.characteristicWithEvidences.evidences as EvidenceID[]
-      this.characteristic=this.characteristicWithEvidences.characteristic
+  // ngOnChanges(changes:SimpleChanges){
+  //   if(this.characteristicWithEvidences){
+  //     this.title = this.characteristicWithEvidences.characteristic.name
+  //     this.evidences = this.characteristicWithEvidences.evidences as EvidenceID[]
+  //     this.characteristic=this.characteristicWithEvidences.characteristic
+  //   }
+  // }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.characteristicWithEvidences) {
+      this.title = this.characteristicWithEvidences.characteristic.name;
+      const characteristicName = this.characteristicWithEvidences.characteristic.name;
+
+      this.evidences = (this.characteristicWithEvidences.evidences as EvidenceID[]).map(evidence => {
+        const nameIsSuspicious = evidence.name.trim().toLowerCase() === characteristicName.trim().toLowerCase();
+
+        if (nameIsSuspicious && evidence.link) {
+          const fileName = this.extractFileNameFromLink(evidence.link.toString());
+          return { ...evidence, name: fileName };
+        }
+
+        return evidence;
+      });
+
+      this.characteristic = this.characteristicWithEvidences.characteristic;
     }
   }
 

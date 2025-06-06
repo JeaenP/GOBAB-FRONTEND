@@ -39,6 +39,7 @@ export class SubindicatorComponent implements OnInit {
   }
 
   filterEvidences(characteristics:CharacteristicID[],evidences:EvidenceID[]):CharacteristicWithEvidence[]{
+    console.log('Evidencias originales:', evidences);
     return characteristics.map(characteristic=>{
       const evidencesFounded = evidences.filter(evidence=>evidence.characteristicID==characteristic.id)
       return {characteristic:characteristic,evidences:evidencesFounded}

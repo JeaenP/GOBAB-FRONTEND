@@ -17,7 +17,8 @@ export const environment = {
   //API_URL:'https://iso-18091-backend-test-production.up.railway.app',
   ROL_ADMIN: 'Administrador',
   ROL_RESPONSIBLE: 'Responsable',
-  TENATID: '65af2467fb5cf44ddbfa687a',
+  //TENATID: '65af2467fb5cf44ddbfa687a',
+  TENATID:'64616f718e118fb22d4059e3',
   azureStorage: {
     accountName: 'iso18091storage',
     containerName: 'test',
