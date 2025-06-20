@@ -2,7 +2,28 @@
   width: 100%;
 }
 
-.description{
-  padding: 2em 3em;
-  text-align: justify;
+.description {
+  display: flex;
+  justify-content: center;
+  padding: 2em 1em;
+  background-color: #fff;
+
+  p {
+    max-width: 960px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 0.02em;
+    word-spacing: 0.1em;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 1.1rem;
+      padding: 0 1em;
+      text-align: left;
+    }
+  }
 }

@@ -1,8 +1,10 @@
-<nz-carousel [nzEffect]="effect">
-  <div class="container" nz-carousel-content *ngFor="let img of urls">
-    <img class="content" [src]="img" alt="">
-    <div class="blackout">
-      <h2>Noticia {{findIndex(urls,img)}}</h2>
+<div class="carousel-wrapper">
+  <nz-carousel [nzEffect]="effect" [nzAutoPlay]="true" [nzAutoPlaySpeed]="4000">
+    <div class="carousel-item" nz-carousel-content *ngFor="let img of urls">
+      <img class="carousel-img" [src]="img" alt="Imagen carrusel">
+      <div class="blackout">
+        <h2>Noticia {{ findIndex(urls, img) }}</h2>
+      </div>
     </div>
-  </div>
-</nz-carousel>
+  </nz-carousel>
+</div>

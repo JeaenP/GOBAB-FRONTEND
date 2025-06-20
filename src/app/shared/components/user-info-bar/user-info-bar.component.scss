@@ -1,79 +1,223 @@
-.container{
-  background-color: var(--color5);
+.infoUserIso {
+    display: none !important; 
+  }
+
+.container {
+  background-color: var(--color2);
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
-  height: 5vh;
   align-items: center;
-}
-.info{
-  display: flex;
-  gap: 1em;
-  padding-left: 1em;
-  align-items: center;
-}
-.info-span{
-  display: flex;
-  align-items: center;
-  font-size: 0.7em;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
 }
 
-.select-period{
-  width: 10vw;
+.info {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  gap: 1em;
-}
-.select{
-  width: 75%;
-}
-.user{
-  display: flex;
-  align-content: center;
-  align-items: center;
-  gap: 0.75em;
-  padding-right: 1em;
-}
-.user-img{
-  height: 4vh;
-  width: 4vh;
-}
-.userInfo{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  height: 100%;
-}
-.userInfo p{
-  margin: 0;
-  padding: 0;
-  font-size: 0.75em;
-  height: 50%;
-  display: flex;
-  align-items: flex-start;
-  color: var(--black);
-}
-.rol{
-  font-style: italic;
-  text-decoration: underline;
-  font-size: 0.75em;
-  align-items: flex-end;
-  font-weight: 400;
+
+  .info-span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    mat-icon {
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
 }
 
-button{
-  background-color: var(--orange);
-  color: var(--white);
-  height: 4vh;
-  width: 6vw;
+.login-btn {
+        background-color: #61a0ff;
+        color: white;
+        padding: 0.4em 1em;
+        border-radius: 6px;
+        text-transform: none;
+        font-weight: 600;
+        transition: transform 0.2s ease;
+        border: none;
+        
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+.select-period {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5rem;
+
+  label {
+    font-weight: 500;
+  }
+
+  .select {
+    min-width: 100px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 }
-.noUser{
+
+.user {
   display: flex;
   align-items: center;
-  padding-right: 1em;
+  gap: 0.75rem;
+
+  .user-img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+
+    .rol {
+      font-style: italic;
+      text-decoration: underline;
+      color: var(--black);
+    }
+  }
+
+  button {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.noUser {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+
+
+.mobile-header {
+  display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: none !important; 
+  }
+
+  .infoUserIso {
+    display: block !important;
+  }
+
+  .mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--color2);
+  border-top: 0.5rem solid var(--color4);
+  text-align: center;
+  position: relative;
+}
+
+ .mobile-col {
+    flex: 0 0 90px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .select-period {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    .select {
+      min-width: 85px;
+    }
+
+    label.visually-hidden {
+      position: absolute;
+      left: -9999px;
+    }
+  }
+
+  .branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+
+    img {
+      height: 38px;
+      object-fit: contain;
+    }
+
+    .hook {
+      h4 {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--color4);
+        text-transform: uppercase;
+      }
+
+      span {
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        color: var(--black);
+      }
+    }
+  }
+
+  .icon-btn {
+    background-color: #61a0ff;
+    color: white;
+    padding: 0.45rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    border: none;
+
+    mat-icon {
+      font-size: 1.3rem;
+    }
+
+    &:hover {
+      background-color: #4e8be0;
+    }
+  }
 }

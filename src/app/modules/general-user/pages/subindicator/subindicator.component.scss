@@ -1,9 +1,10 @@
 :host{
   width: 100%;
+  height: fit-content;
 }
 .container{
   display: flex;
-  min-height: 85vh;
+  height: fit-content;
 }
 main{
   width: 75%;

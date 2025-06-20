@@ -1,31 +1,61 @@
 [nz-carousel-content] {
   height: 50vh;
   overflow: hidden;
+  position: relative;
+}
 
-}
-.container{
-  display: flex!important;
+.carousel-item {
+  display: flex !important;
   justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.content{
-  height: 100%;
-}
-.blackout{
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+
+.carousel-img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
+}
+
+.blackout {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  h2{
+  
+  h2 {
     text-transform: uppercase;
     color: var(--white);
+    font-size: 1.5em;
   }
 }
 
-h3 {
-  color: #fff;
-  margin-bottom: 0;
-  user-select: none;
+.carousel-wrapper {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 6%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.25), transparent);
+  }
+
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.25), transparent);
+  }
 }

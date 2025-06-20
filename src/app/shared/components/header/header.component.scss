@@ -1,36 +1,86 @@
-.header{
-  height: 18vh;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--color2);
+@media screen and (max-width: 768px) {
+  .header {
+    display: none !important; // oculta versión escritorio
+  }
 }
-.name{
-  width: 30%  ;
-  height: 100%;
-  padding-left: 1em;
+
+.header {
+  width: 100%;
+  background-color: var(--color2);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  border-top: 0.5rem solid var(--color4);
 }
-.logo{
 
+.name {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
 }
-.hook{
+
+.logo img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+
+  @media (max-width: 768px) {
+    height: 48px;
+  }
+
+  @media (max-width: 480px) {
+    height: 40px;
+  }
+}
+
+.hook {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 85%;
-  h4{
-    padding: 0;
+  justify-content: center;
+
+  h4 {
     margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    color:var(--color4);
     font-weight: 700;
+    color: var(--color4);
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
   }
-  span{
-    letter-spacing: 0.55em;
+
+  span {
+    font-size: 0.85rem;
+    letter-spacing: 0.4em;
     text-transform: uppercase;
+    color: var(--black);
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+    }
   }
 }

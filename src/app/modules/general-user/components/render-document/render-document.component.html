@@ -1,7 +1,38 @@
-<h3 *ngIf="name">{{name}}</h3>
-<app-view-pdf class="container" *ngIf="url;else elseBlock" [url]="url"></app-view-pdf>
-<ng-template class="container no-content" #elseBlock class="noContent">
-  No existe portada
-  <span>Puede selecionar otra evidencia para cargarla aquí!</span>
+<h1 *ngIf="name">{{name}}</h1>
+
+<div class="info-container" *ngIf="note || rubricTable.length > 0">
+  <div *ngIf="note" class="note-text">
+    {{ note }}
+  </div>
+
+  <div *ngIf="rubricTable.length > 0" class="rubric-table">
+    <h3>Requisitos y Escala de Valoración</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Categoría</th>
+          <th>Calificación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of rubricTable">
+          <td>{{ item.name }}</td>
+          <td>{{ item.category }}</td>
+          <td class="centered">{{ item.qualification }}/{{ item.maxValue }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="pdf-wrapper">
+  <app-view-pdf *ngIf="url; else elseBlock" [url]="url"></app-view-pdf>
+</div>
+
+<ng-template #elseBlock>
+  <div class="no-content">
+    No existe portada
+    <span>Puede seleccionar otra evidencia para cargarla aquí!</span>
+  </div>
 </ng-template>
-<span class="note" *ngIf="note" style="white-space: pre-line">{{ note }}</span>

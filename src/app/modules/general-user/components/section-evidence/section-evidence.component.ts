@@ -67,6 +67,7 @@ export class SectionEvidenceComponent implements OnInit,AfterViewInit,OnChanges 
   //     this.characteristic=this.characteristicWithEvidences.characteristic
   //   }
   // }
+
   ngOnChanges(changes: SimpleChanges): void {
     if (this.characteristicWithEvidences) {
       this.title = this.characteristicWithEvidences.characteristic.name;

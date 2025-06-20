@@ -1,13 +1,35 @@
-<nav class="container">
-  <div class="menu">
-    <ul>
-      <li [routerLink]="['./home']"  class="menuOpcion">
-        Inicio</li>
-      <li [routerLink]="['./quadrant','1']" class="menuOpcion">Cuadrante 1</li>
-      <li [routerLink]="['./quadrant','2']" class="menuOpcion">Cuadrante 2</li>
-      <li [routerLink]="['./quadrant','3']" class="menuOpcion">Cuadrante 3</li>
-      <li [routerLink]="['./quadrant','4']" class="menuOpcion">Cuadrante 4</li>
-      <li [routerLink]="'../login'"> Ingresar</li>
-    </ul>
+<nav class="nav-container">
+  
+  <ul class="nav-list desktop">
+    <li routerLink="/user/home" routerLinkActive="active">Inicio</li>
+    <li routerLink="/user/quadrant/1" routerLinkActive="active">Cuadrante 1</li>
+    <li routerLink="/user/quadrant/2" routerLinkActive="active">Cuadrante 2</li>
+    <li routerLink="/user/quadrant/3" routerLinkActive="active">Cuadrante 3</li>
+    <li routerLink="/user/quadrant/4" routerLinkActive="active">Cuadrante 4</li>
+    
+  </ul>
+
+
+
+  <div class="mobile-nav">
+  <div class="top-actions">
+    <div class="inicio-link" routerLink="/user/home">
+      <mat-icon class="mat-icon">home</mat-icon>
+      <span>Inicio</span>
+    </div>
+
+    <div class="dropdown-container">
+      <label for="quadrantSelect">Cuadrante:</label>
+      <select id="quadrantSelect" (change)="navigateTo($event)">
+        <option value="/user/quadrant/1">1</option>
+        <option value="/user/quadrant/2">2</option>
+        <option value="/user/quadrant/3">3</option>
+        <option value="/user/quadrant/4">4</option>
+      </select>
+    </div>
+
+    
   </div>
+</div>
+
 </nav>

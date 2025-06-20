@@ -8,9 +8,13 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class EvidenceService {
 
   private apiUrl = `${environment.API_URL}/api/evidences`
+
+  
 
   private evidenceSelected$ = new BehaviorSubject<EvidenceID>({
     characteristicID:'',
@@ -54,4 +58,5 @@ export class EvidenceService {
   deleteEvidence(id:string){
     return this.http.delete<any>(`${this.apiUrl}/${id}`)
   }
+  
 }

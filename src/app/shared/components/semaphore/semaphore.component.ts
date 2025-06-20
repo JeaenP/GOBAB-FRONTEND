@@ -149,6 +149,7 @@ export class SemaphoreComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    console.log("dataaa", this.data)
     if (this.isInitialized && this.data.length > 0) {
       //window.location.reload()
       if (this.quadrant === '1') {
