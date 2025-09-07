@@ -7,6 +7,7 @@ import { QuadrantSummaryComponent } from './pages/quadrant-summary/quadrant-summ
 import { IndicatorComponent } from './pages/indicator/indicator.component';
 import { IndicatorSummaryComponent } from './pages/indicator-summary/indicator-summary.component';
 import { SubindicatorComponent } from './pages/subindicator/subindicator.component';
+import { EnlacesComponent } from './pages/enlaces/enlaces.component';
 
 const routes:Routes = [
   {
@@ -17,6 +18,9 @@ const routes:Routes = [
         path:'home',
         component:HomeComponent
       },
+      { 
+        path: "enlaces", 
+        component: EnlacesComponent },
       {
         path:'',
         redirectTo:'home',

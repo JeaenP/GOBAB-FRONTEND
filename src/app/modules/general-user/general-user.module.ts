@@ -18,6 +18,7 @@ import { SubindicatorComponent } from './pages/subindicator/subindicator.compone
 import { RenderDocumentComponent } from './components/render-document/render-document.component';
 import { SideBarEvidencesComponent } from './components/side-bar-evidences/side-bar-evidences.component';
 import { SectionEvidenceComponent } from './components/section-evidence/section-evidence.component';
+import { EnlacesComponent } from './pages/enlaces/enlaces.component';
 
 
 
@@ -39,6 +40,7 @@ import { SectionEvidenceComponent } from './components/section-evidence/section-
     RenderDocumentComponent,
     SideBarEvidencesComponent,
     SectionEvidenceComponent,
+    EnlacesComponent
 
   ],
   imports: [

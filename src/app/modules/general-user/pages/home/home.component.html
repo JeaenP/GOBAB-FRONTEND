@@ -1,12 +1,41 @@
 <main class="container">
   <app-carrousel></app-carrousel>
-  <section class="description">
-    <p>
-      EL proyecto contempla la elaboración de una herramienta denominada <strong>BaldurWatch</strong>, se denomina de esta manera, pues hace referencia a Balder, un dios nórdico que relaciona a la justicia y verdad, lo que insinúa que será un software confiable y transparente al momento de manejar información pertinente para conocimiento público, de la misma forma esto conlleva a la gestión de documentos para validar resultados dentro de un gobierno, específicamente un GAD.
-      <br><br> Para este proyecto se tomara en cuenta los municipios de <strong>Loja y Calvas</strong>, para lo cual se implementara un prototipo para evaluar los resultados que se llevan a cabo al termino de proyectos que se tienen propuestos en la administración, para ello se utilizara la norma <strong>ISO 18091</strong> la cual a través de sus 39 indicadores nos permitirá evaluar estos resultados en conjunto con los ODS y el cumplimiento de las respectivas evidencias para cada indicador.
-      <br><br> El propósito es dar lugar a que la ciudadanía se sienta participe y tenga un contexto de como se esta dando respuesta a proyectos presentados en cada GAD, asi mismo se tendrá una semaforización para calificar a que nivel se da ejecución a cada proyecto; lo cual consta de 3 colores rojo, azul y amarillo lo que su explicación se podrá observar consecuentemente.
-    </p>
+  
+  <!-- Reorganized content into two columns: existing text left, methodology right -->
+  <section class="content-grid">
+    <div class="description-column">
+      <div class="section-header">
+        <h2>Descripción del Proyecto</h2>
+      </div>
+      <p>
+        EL proyecto contempla la elaboración de una herramienta denominada <strong>BaldurWatch</strong>, se denomina de esta manera, pues hace referencia a Balder, un dios nórdico que relaciona a la justicia y verdad, lo que insinúa que será un software confiable y transparente al momento de manejar información pertinente para conocimiento público, de la misma forma esto conlleva a la gestión de documentos para validar resultados dentro de un gobierno, específicamente un GAD.
+        <br><br> Para este proyecto se tomara en cuenta los municipios de <strong>Loja y Calvas</strong>, para lo cual se implementara un prototipo para evaluar los resultados que se llevan a cabo al termino de proyectos que se tienen propuestos en la administración, para ello se utilizara la norma <strong>ISO 18091</strong> la cual a través de sus 39 indicadores nos permitirá evaluar estos resultados en conjunto con los ODS y el cumplimiento de las respectivas evidencias para cada indicador.
+        <br><br> El propósito es dar lugar a que la ciudadanía se sienta participe y tenga un contexto de como se esta dando respuesta a proyectos presentados en cada GAD, asi mismo se tendrá una semaforización para calificar a que nivel se da ejecución a cada proyecto; lo cual consta de 3 colores rojo, azul y amarillo lo que su explicación se podrá observar consecuentemente.
+      </p>
+    </div>
+    
+    <div class="methodology-column">
+      <div class="section-header">
+        <h2>Metodología</h2>
+      </div>
+      <div class="methodology-content">
+        <h3>Enfoques Metodológicos</h3>
+        <p>GOBAB integra la norma ISO-18091:2019 y la investigación acción participativa, priorizando la democratización del conocimiento y la participación ciudadana.</p>
+        
+        <h3>Proceso de Implementación</h3>
+        <ul>
+          <li><strong>Voluntad Política:</strong> Compromiso del gobierno local para implementar la metodología integrada.</li>
+          <li><strong>Capacitación:</strong> Formación de equipos técnicos en la Norma ISO 18091:2019 y sus 39 indicadores.</li>
+          <li><strong>Validación:</strong> Desarrollo y prueba de la plataforma GOBAB con apoyo académico.</li>
+          <li><strong>Recolección:</strong> Establecimiento de procesos para evidencias documentales y semaforización.</li>
+        </ul>
+        
+        <h3>Transformación Digital</h3>
+        <p>La implementación incluye la creación de un Observatorio Ciudadano y ordenanzas para garantizar la transparencia y participación social en el gobierno abierto.</p>
+      </div>
+    </div>
   </section>
+  
   <app-quadrant-section quadrantNumber="1" ></app-quadrant-section>
   <app-quadrant-section [style2]="true" quadrantNumber="2" ></app-quadrant-section>
   <app-quadrant-section  quadrantNumber="3" ></app-quadrant-section>
